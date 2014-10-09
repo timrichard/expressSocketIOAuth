@@ -1,0 +1,9 @@
+extends layout
+block head
+    script(src='/socket.io/socket.io.js')
+    script
+        console.log('account.jade : Loaded.');
+        var socket = io.connect();
+block content
+    p Username : #{user.name}
+    p Email : #{user.email}

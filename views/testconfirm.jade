@@ -1,0 +1,14 @@
+extends layout
+block head
+    script
+        console.log('testconfirm.jade : Loaded.');
+block content
+    p Links to verify unverified accounts in the DB
+    - if (unverifiedUsers.length)
+        table
+            - unverifiedUsers.forEach(function(item) {
+                tr
+                    td #{item.name}
+                    td
+                        a(href=item.url) #{item.email}
+            - })

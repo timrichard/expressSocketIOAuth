@@ -1,0 +1,21 @@
+extends layout
+block content
+    form(action='/register', method='post')
+        div
+            label Email address:
+            input(type='text', name='emailAddress')
+            br
+        div
+            label Full name:
+            input(type='text', name='fullName')
+            br
+        div
+            label Password:
+            input(type='password', name='password')
+            br
+        div
+            label Repeat password:
+            input(type='password', name='repeatPassword')
+            br
+        div
+            input(type='submit', value='submit')

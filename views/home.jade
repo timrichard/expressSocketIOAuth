@@ -1,0 +1,14 @@
+extends layout
+block head
+    script
+        console.log('home.jade : Loaded.');
+block content
+    - if (!user)
+        p
+            a(href='/') Home
+            a(href='/login') Log In
+    - else
+        p
+            a(href='/') Home
+            a(href='/account') Account
+            a(href='/logout') Log Out

@@ -1,0 +1,21 @@
+extends layout
+block head
+    script(src='/socket.io/socket.io.js')
+    script
+        console.log('index.jade : Loaded.');
+        var socket = io.connect();
+block content
+    - if (!user)
+        h2 Welcome! Please log in.
+        script
+            console.log('index.jade : User not authenticated.');
+    - else
+        h2 Hello, #{user.name}.
+        script
+            console.log('index.jade : User already authenticated.');
+    p
+        a(id='linkLogin', href='login') Login
+    p
+        a(id='linkLogout', href='logout') Logout
+    p
+        a(id='linkAccount', href='account') Account
